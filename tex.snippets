@@ -1,0 +1,203 @@
+# standart article
+snippet art
+	\title{${1:TITEL}}
+	\author{Johannes Becherer \\   %{{{
+	         CEOAS - Oregonstate University}
+	\date{\today}
+	\documentclass[12pt]{article}
+		\usepackage{graphicx}
+		\usepackage{psfrag}
+		\usepackage{natbib}
+		\usepackage{amsmath}  %}}}
+	\begin{document}
+	\maketitle
+	\section{Introduction}
+	  ${2}	
+	\end{document}
+# \begin{}...\end{}
+snippet begin
+	\begin{${1:env}}
+		${2}
+	\end{$1}
+	
+snippet bib
+	% BibTeX users please use one of
+		%\bibliographystyle{spbasic}     % basic style, author-year citations
+		\bibliographystyle{spmpsci}      % mathematics and physical sciences
+		%\bibliographystyle{spphys}      % APS-like style for physics
+		\bibliography{bib}					% name your BibTeX data base
+		
+# Tabular
+snippet tab
+	\begin{${1:tabular}}{${2:c}}
+	${3}
+	\end{$1}
+# Align(ed)
+snippet ali
+	\begin{align${1:ed}}
+		${2}
+	\end{align$1}
+# Gather(ed)
+snippet gat
+	\begin{gather${1:ed}}
+		${2}
+	\end{gather$1}
+# Equation
+snippet eq
+	\begin{equation}\label{eq_${1}}
+		${2}
+	\end{equation}
+# Unnumbered Equation
+snippet \
+	\\[
+		${1}
+	\\]
+# Enumerate
+snippet enum
+	\begin{enumerate}
+		\item ${1}
+	\end{enumerate}
+# Itemize
+snippet item
+	\begin{itemize}
+		\item ${1}
+	\end{itemize}
+# Description
+snippet desc
+	\begin{description}
+		\item[${1}] ${2}
+	\end{description}
+# Matrix
+snippet mat
+	\begin{${1:p/b/v/V/B/small}matrix}
+		${2}
+	\end{$1matrix}
+# Cases
+snippet cas
+	\begin{cases}
+		${1:equation}, &\text{ if }${2:case}\\
+		${3}
+	\end{cases}
+# Split
+snippet spl
+	\begin{split}
+		${1}
+	\end{split}
+# Part
+snippet part
+	\part{${1:part name}} % (fold)
+	\label{prt:${2:$1}}
+	${3}
+	% part $2 (end)
+# Chapter
+snippet cha
+	\chapter{${1:chapter name}} % (fold)
+	\label{cha:${2:$1}}
+	${3}
+	% chapter $2 (end)
+# Section
+snippet sec
+	\section{${1:section name}} 
+		\label{sec_${2:$1}} %{{{
+	${3}
+	% section $2 (end) %}}}
+# Sub Section
+snippet sub
+	\subsection{${1:subsection name}} 
+		\label{sec_${2:$1}} %{{{
+	${3}
+	% subsection $2 (end) %}}}
+	
+# Sub Sub Section
+snippet subs
+	\subsubsection{${1:subsubsection name}} 
+		\label{ssub:${2:$1}} %{{{
+	${3}
+	% subsubsection $2 (end) %}}}
+# Paragraph
+snippet par
+	\paragraph{${1:paragraph name}} % (fold)
+	\label{par:${2:$1}}
+	${3}
+	% paragraph $2 (end)
+# Sub Paragraph
+snippet subp
+	\subparagraph{${1:subparagraph name}} % (fold)
+	\label{subp:${2:$1}}
+	${3}
+	% subparagraph $2 (end)
+snippet itd
+	\item[${1:description}] ${2:item}
+snippet rf
+	${1:Figure}~\ref{fig_${2}}${3}
+snippet re
+	(\ref{eq_${1:}})
+snippet table
+	${1:Table}~\ref{${2:tab:}}${3}
+snippet listing
+	${1:Listing}~\ref{${2:list}}${3}
+snippet rs
+	${1:Section}~\ref{${2:sec:}}${3}
+snippet page
+	${1:page}~\pageref{${2}}${3}
+snippet le
+	\label{eq_${1}}${2}
+snippet ls
+	\label{sec_${1}}
+	${2}
+snippet lf
+	\label{fig_${1}}
+	${2}
+snippet zo
+	%\{{{
+snippet zc
+	%\}}}
+	
+snippet fig
+	\begin{figure*}
+	  \centering\includegraphics[width=.7\linewidth,angle=0]{${1:./pics/pic}.pdf}
+	  \caption{${2}}
+			\label{fig_${3}}
+	\end{figure*}
+	${4}
+	
+snippet teps
+	$\epsilon$
+snippet x
+	$\chi$ 
+snippet xpod
+	$\chi$-pod 
+
+#______________Formular stuff _____________________
+snippet (
+	(${1})${2}
+snippet [
+	[${1}]${2}
+snippet {
+	{${1}}${2}
+snippet (e
+	\left( ${1} \right)${2}
+snippet [e
+	\left[ ${1} \right]${2}
+snippet {e
+	\left{ ${1} \right}${2}
+snippet avg
+	\left\langle ${1:x} \right\rangle ${2}
+snippet eps
+	\varepsilon	
+snippet ^
+	${2}^{${1}}${3}
+snippet t^
+	${2}$^{${1}}${3}
+snippet _
+	${2}_{${1}}${3}
+snippet t_
+	${2}$_{${1}}${3}
+snippet frac
+	\frac{${1}}{${2}}${3}
+snippet e,
+	\text{ ,}
+snippet e.
+	\text{ .}
+snippet dt
+	\frac{\text{d} ${1:u}}{\text{d} ${2:t}}${3}
