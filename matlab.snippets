@@ -35,14 +35,9 @@ snippet cbar
 	colormap(ax(a), cmap.${2:$1});
 	caxis(ax(a), cax([1 end]));
 snippet cb
-	%colorbar
-		caxis(ax(a), cl);
-		cas = cl(1):diff(cl)/21:cl(2); 
-		pcolor(axc(a), [0 1], [cas], [cas; cas]')
-		shading(axc(a),'flat');
-		set(axc(a), 'Yaxislocation', 'right', 'Xticklabel',{})
-		ylabel(axc(a), '${1:[m/s]}')
-	$2
+	cb = colorbar('peer', ax(a));
+		axpos = get(ax(a), 'Position');
+		cb.Position =  [axpos(1)+axpos(3)+.01 axpos(2) .02 axpos(4) ];
 	
 snippet cc
 	clear all;
