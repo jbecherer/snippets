@@ -177,7 +177,9 @@ snippet hold
 	hold(${1:ax(a)},'on');
 	${2}
 snippet legend
-	legend(p, 'ADCP', 'Pitot');
+	lg = legend(ax(a), ' ', ' ');
+		axpos = get(ax(a), 'Position');
+		lg.Position =  [axpos(1)+axpos(3)-.05 axpos(2)+.7*axpos(4) .02 .3*axpos(4) ];
 	${1}
 snippet link
 	linkaxes(${1:ax}, 'x');
